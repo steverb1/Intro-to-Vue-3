@@ -16,4 +16,5 @@ const app = Vue.createApp({
             }
         }
     }
-})
+  })
+  

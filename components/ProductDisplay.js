@@ -5,7 +5,7 @@ app.component('product-display', {
       required: true
     }
   },
-  template:
+  template: 
   /*html*/
   `<div class="product-display">
     <div class="product-container">
@@ -19,7 +19,6 @@ app.component('product-display', {
         <p v-else>Out of Stock</p>
 
         <p>Shipping: {{ shipping }}</p>
-
         <ul>
           <li v-for="detail in details">{{ detail }}</li>
         </ul>
@@ -39,13 +38,7 @@ app.component('product-display', {
           v-on:click="addToCart">
           Add to Cart
         </button>
-        <button
-          class="button"
-          :class="{ disabledButton: !inStock }"
-          :disabled="!inStock"
-          v-on:click="removeFromCart">
-          Remove Item
-        </button>
+
       </div>
     </div>
   </div>`,
@@ -64,9 +57,6 @@ app.component('product-display', {
   methods: {
       addToCart() {
           this.$emit('add-to-cart', this.variants[this.selectedVariant].id)
-      },
-      removeFromCart() {
-          this.$emit('remove-from-cart', this.variants[this.selectedVariant].id)
       },
       updateVariant(index) {
           this.selectedVariant = index
